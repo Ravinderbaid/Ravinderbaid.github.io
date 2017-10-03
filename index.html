@@ -16,7 +16,7 @@
       color: #f5f6f7;
   }
   p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
+  .margin {margin-top: 45px;}
   .bg-1 { 
       background-color: #1abc9c; /* Green */
       color: #ffffff;
@@ -34,8 +34,8 @@
       color: #fff;
   }
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 10%;
+      padding-bottom: 10%;
   }
   .navbar {
       padding-top: 15px;
@@ -54,7 +54,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -62,11 +62,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Ravinder Baid</a>
+      <a class="navbar-brand" href="#me">Ravinder Baid</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#who">WHO</a></li>
+        <li><a href="#me">Me</a></li>
         <li><a href="#what">WHAT</a></li>
         <li><a href="#where">WHERE</a></li>
       </ul>
@@ -75,15 +75,33 @@
 </nav>
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-  <h3 class="margin">Me</h3>
-  <img src="static/img/me.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="250" height="250">
-  <h3>Developer | Coder | Pythonist |Fun loving |Traveller | Looking for a role as full stack developer in Python</h3>
+<div class="container-fluid bg-1 text-center" id="me">
+  <div class="col-sm-6 col-md-6 col-lg-8">
+  	<p>	I am Ravinder Baid,a Backend developer having a good idea about Frontend too. </p>
+  	<p>
+  		I am currently working as System Engineer in Infosys here previously worked on small projects on Python. And currently I am working on U2 technologies for our client KLX. Its an ecommerce website that sells parts for planes, we have three department with us i.e. Sales, Finance and Extracts.
+
+		I am working with Sales department. Here we Unibasic as language and Unidata as database it is a rare technology. 
+		We don't have many sources available for the same.
+	</p>
+	<p>
+		I had previously worked with ParallelDots where I used to work on Python Pyquery. There I had scrapped websites like TimesofIndia , Economic Times, Bvoiltare, HindustanTimes etc. 
+
+		Made an app that you can use to send mail later.At your specific time and according to your needs. So that you don't need to set an reminder,to send a mail.Not only for business process you can also use that for your personal needs like wishing your friends on their birthday etc.
+
+		I have also made some small apps on github. Like one Cricbuzz-notification here i scrap recent scores and display it as a desktop notification.
+  	</p>
+  	<h3> Developer | Coder | Pythonist | Web Scrapper | Traveller | Looking for a role as full stack developer in Python</h3>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-4">
+  	<h2 class="margin">Ravinder Baid</h2>
+  	<img src="static/img/me.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="250" height="250">
+  </div>
 </div>
 
 <!-- Second Container -->
-<div class="container-fluid bg-2 text-center" >
-  <h3 class="margin" id= "what">What Am I?</h3>
+<div id="skills" class="container-fluid bg-2 text-center" >
+  <h3 class="margin" >What Am I?</h3>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
   <a href="#" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search
@@ -91,7 +109,7 @@
 </div>
 
 <!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
+<div id="where" class="container-fluid bg-3 text-center">    
   <h3 class="margin">Where To Find Me?</h3><br>
   <div class="row">
     <div class="col-sm-4">
