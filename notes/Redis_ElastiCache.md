@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Redis and Elasticsearch"
+---
+
 Redis and ElastiCache are related but serve different purposes:
 
 1. **Redis**:
