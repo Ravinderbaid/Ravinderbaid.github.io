@@ -1,4 +1,7 @@
-# Database Data Types and Their Sizes
+---
+layout: default
+title: "Database date types and their sizes"
+---
 
 The size of each data type in a database can vary depending on the database system you're using (e.g., MySQL, PostgreSQL, SQL Server, etc.) and the specific data type definitions within that system. Below is a general overview of common data types and their sizes:
 
