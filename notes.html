@@ -1,10 +1,13 @@
-<h2>Notes</h2>
-
+---
+layout: default
+title: "Notes List"
+---
 <ol>
-    <li>
-      <h3><a href="notes/Database_Data_Types_and_Sizes">Database data types and sizes</a></h3>
-    </li>
-    <li>
-      <h3><a href="notes/Redis_ElastiCache">Redis and ElastiCache</a></h3>
-    </li>
+{% for post in site.posts %}
+<li>
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <hr>
+</li>
+
+{% endfor %}
 </ol>
