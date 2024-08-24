@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Redis and Elasticsearch"
 ---
 
@@ -19,7 +19,8 @@ Redis and ElastiCache are related but serve different purposes:
 In summary, Redis is the underlying technology, while ElastiCache is a managed service that uses Redis (or Memcached) to provide caching solutions in the AWS cloud.
 
 # Fun fact:
-
-```shell
+<font size="3" align="center"> 
+{% highlight shell %}
 Have you ever wondered why many Amazon AWS services have names that start with "Elastic"?
-```
+{% endhighlight %}
+</font>

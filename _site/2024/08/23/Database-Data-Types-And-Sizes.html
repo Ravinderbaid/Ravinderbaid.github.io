@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+  <head>
+    <head>
+
+      <meta charset="UTF-8">
+      <title>Database date types and their sizes</title>
+      <meta name="viewport" content="width=device-width">
+      
+      <link href="/assets/css/style.css" rel="stylesheet" />
+      <link href="/assets/css/colors-light.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+  </head>
+  <body>
+    <header id="header">
+      <h1><a href="/notes"><i class="fa fa-magic" aria-hidden="true"></i> Notes by Ravinder</a></h1>
+      <p>Notes for future references</p>
+    </header>
+    <article class="post">
+
+	<h1><a href="/2024/08/23/Database-Data-Types-And-Sizes.html">Database date types and their sizes</a></h1>
+	
+	<div class="post-content"><p>The size of each data type in a database can vary depending on the database system you’re using (e.g., MySQL, PostgreSQL, SQL Server, etc.) and the specific data type definitions within that system. Below is a general overview of common data types and their sizes:</p>
+
+<h3 id="1-integer-types">1. <strong>Integer Types</strong></h3>
+
+<ul>
+  <li><strong>TINYINT</strong>:
+    <ul>
+      <li>Size: 1 byte</li>
+      <li>Range: -128 to 127 (signed), 0 to 255 (unsigned)</li>
+    </ul>
+  </li>
+  <li><strong>SMALLINT</strong>:
+    <ul>
+      <li>Size: 2 bytes</li>
+      <li>Range: -32,768 to 32,767 (signed), 0 to 65,535 (unsigned)</li>
+    </ul>
+  </li>
+  <li><strong>MEDIUMINT</strong> (MySQL-specific):
+    <ul>
+      <li>Size: 3 bytes</li>
+      <li>Range: -8,388,608 to 8,388,607 (signed), 0 to 16,777,215 (unsigned)</li>
+    </ul>
+  </li>
+  <li><strong>INT / INTEGER</strong>:
+    <ul>
+      <li>Size: 4 bytes</li>
+      <li>Range: -2,147,483,648 to 2,147,483,647 (signed), 0 to 4,294,967,295 (unsigned)</li>
+    </ul>
+  </li>
+  <li><strong>BIGINT</strong>:
+    <ul>
+      <li>Size: 8 bytes</li>
+      <li>Range: -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 (signed), 0 to 18,446,744,073,709,551,615 (unsigned)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-floating-point-types">2. <strong>Floating-Point Types</strong></h3>
+
+<ul>
+  <li><strong>FLOAT</strong>:
+    <ul>
+      <li>Size: 4 bytes</li>
+      <li>Precision: 6-7 decimal digits</li>
+    </ul>
+  </li>
+  <li><strong>DOUBLE</strong>:
+    <ul>
+      <li>Size: 8 bytes</li>
+      <li>Precision: 15-16 decimal digits</li>
+    </ul>
+  </li>
+  <li><strong>REAL</strong>:
+    <ul>
+      <li>Often an alias for FLOAT or DOUBLE depending on the database system.</li>
+      <li>Size: Depends on the specific implementation.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="3-fixed-point-types">3. <strong>Fixed-Point Types</strong></h3>
+
+<ul>
+  <li><strong>DECIMAL / NUMERIC</strong>:
+    <ul>
+      <li>Size: Varies based on the precision and scale.</li>
+      <li>For example, DECIMAL(10,2) requires approximately 5 bytes.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="4-character-types">4. <strong>Character Types</strong></h3>
+
+<ul>
+  <li><strong>CHAR(n)</strong>:
+    <ul>
+      <li>Size: n bytes (fixed-length)</li>
+    </ul>
+  </li>
+  <li><strong>VARCHAR(n)</strong>:
+    <ul>
+      <li>Size: Varies based on the actual length of the stored string, plus 1 or 2 bytes for length information.</li>
+      <li>Example: If you store a string of length 10 in VARCHAR(255), the storage requirement is 10 bytes + 1 byte for length = 11 bytes.</li>
+    </ul>
+  </li>
+  <li><strong>TEXT</strong>:
+    <ul>
+      <li>Size: Varies depending on the database system.</li>
+      <li>Typically larger, often stored in a different storage area with a reference in the main table.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="5-binary-types">5. <strong>Binary Types</strong></h3>
+
+<ul>
+  <li><strong>BINARY(n)</strong>:
+    <ul>
+      <li>Size: n bytes (fixed-length)</li>
+    </ul>
+  </li>
+  <li><strong>VARBINARY(n)</strong>:
+    <ul>
+      <li>Size: Varies based on the actual length of the stored binary data, plus 1 or 2 bytes for length information.</li>
+    </ul>
+  </li>
+  <li><strong>BLOB</strong>:
+    <ul>
+      <li>Size: Varies, depending on the database system.</li>
+      <li>Used for large binary objects, like images or files.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="6-date-and-time-types">6. <strong>Date and Time Types</strong></h3>
+
+<ul>
+  <li><strong>DATE</strong>:
+    <ul>
+      <li>Size: 3 bytes</li>
+    </ul>
+  </li>
+  <li><strong>TIME</strong>:
+    <ul>
+      <li>Size: 3 bytes</li>
+    </ul>
+  </li>
+  <li><strong>DATETIME</strong>:
+    <ul>
+      <li>Size: 8 bytes</li>
+    </ul>
+  </li>
+  <li><strong>TIMESTAMP</strong>:
+    <ul>
+      <li>Size: 4 bytes (in some systems, it might be 8 bytes)</li>
+    </ul>
+  </li>
+  <li><strong>YEAR</strong> (MySQL-specific):
+    <ul>
+      <li>Size: 1 byte</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="7-boolean-type">7. <strong>Boolean Type</strong></h3>
+
+<ul>
+  <li><strong>BOOLEAN / BOOL</strong>:
+    <ul>
+      <li>Size: Typically 1 byte (often stored as TINYINT(1) in MySQL).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="8-other-data-types">8. <strong>Other Data Types</strong></h3>
+
+<ul>
+  <li><strong>ENUM</strong> (MySQL-specific):
+    <ul>
+      <li>Size: 1 or 2 bytes, depending on the number of enumeration values.</li>
+    </ul>
+  </li>
+  <li><strong>SET</strong> (MySQL-specific):
+    <ul>
+      <li>Size: 1, 2, 3, 4, or 8 bytes, depending on the number of set members.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="9-uuid">9. <strong>UUID</strong></h3>
+
+<ul>
+  <li><strong>UUID</strong>:
+    <ul>
+      <li>Size: 16 bytes (128 bits)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="notes">Notes:</h3>
+
+<ul>
+  <li><strong>Database Specifics</strong>: The exact size can vary depending on the database system’s internal representation and any additional overhead or optimizations.</li>
+  <li><strong>Overhead</strong>: Storage sizes mentioned above are for the data itself. Database systems may add additional overhead for indexing, record headers, and other metadata.</li>
+  <li><strong>Nullability</strong>: If a column allows <code class="language-plaintext highlighter-rouge">NULL</code>, some databases add additional storage (e.g., 1 byte) to store the NULL status.</li>
+</ul>
+</div>
+
+	<p class="meta">Posted on <span class="postdate">Aug 23, 2024</span></p>
+
+</article>
+  </body>
+</html>

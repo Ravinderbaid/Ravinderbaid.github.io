@@ -1,0 +1,5 @@
+name: Notes by Ravinder
+url: https://ravinderbaid.github.io
+description: Notes for future references
+
+exclude: ["README.md", "Gemfile.lock", "Gemfile", "Rakefile"]

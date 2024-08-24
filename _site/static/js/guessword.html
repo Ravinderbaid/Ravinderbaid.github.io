@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var k=0;
+			var z,chc,str,rig;
+			str='';
+			function hidbutton()
+			{
+				document.getElementById('guesstext').style.visibility='hidden';
+				document.getElementById('guessbutton').style.visibility='hidden';
+				
+			}
+			function tr()
+			{
+				var i,j;
+				str='';
+				k=0;
+				grp =new Array(2);
+				arr = new Array(2);
+				arr[0] = new Array(4);
+				arr[0][0] = "PHP";
+				arr[0][1] = "PYTHON";
+				arr[0][2] = "JAVA";
+				arr[0][3] = "RUBY";
+				
+				arr[1] = new Array(4);
+				arr[1][0] = "GUITAR";
+				arr[1][1] = "VIOLIN";
+				arr[1][2] = "PIANO";
+				arr[1][3] = "VEENA";
+				
+				arr[2] = new Array(4);
+				arr[2][0] = "HISTORY";
+				arr[2][1] = "MATHEMATICS";
+				arr[2][2] = "CHEMISTRY";
+				arr[2][3] = "ENGLISH";
+
+				grp[0] = "Scripting Languages/Programming Languages";
+				grp[1] ="Musical Instrument";
+				grp[2] ="School level Subjects";
+
+				var x = Math.floor((Math.random() * 10) + 1);
+    			x= x%3;
+    			var y = Math.floor((Math.random() * 10) + 1);
+    			y= y%4;
+    			for(i=0;i<arr[x][y].length;i++)
+    			{
+    				str = str+'-'+'\t';
+    			}
+    			z =arr[x][y];
+    			chc=arr[x][y].length;
+    			rig = new Array(z.length);
+    			document.getElementById('ques').innerHTML = grp[x];
+				document.getElementById('result').innerHTML = str;
+				document.getElementById('index').innerHTML = 'A '+ (str.length)/2 +' letter word';
+				document.getElementById('guesstext').style.visibility='visible';
+				document.getElementById('guessbutton').style.visibility='visible';	
+				document.getElementById('quesbutton').style.visibility='hidden';
+				document.forms['myform'].style.background="white";
+			}
+			function matching()
+			{
+				g=document.forms['myform']['guess'].value;
+				g=g.toUpperCase();
+				var i,flag,wrd='';
+				flag =0;
+				if(chc>0)
+				{
+					for(i=0;i<z.length;i++)
+					{
+						if(g.charAt(0)==z.charAt(i))
+						{
+							flag = 1; 
+							rig[i] = 1;
+							k=k+1;
+							document.getElementById('guesstext').value = '';
+							//document.getElementById('result').innerHTML = z.substring(0,k)+str.substring(k*2,str.length);		
+						}	
+					}
+					if(flag==0)
+					{
+						chc=chc-1;
+						document.getElementById('chance').innerHTML = 'No of chances: '+ chc;
+						document.getElementById('guesstext').value = '';
+					}
+					for(i=0;i<str.length;i=i+2)
+					{
+						if(rig[i/2]==1)
+						{
+							wrd = wrd + z.charAt(i/2) + '\t';
+						}
+						else
+						{
+							wrd = wrd + str.charAt(i)+'\t';
+						}
+					}
+					document.getElementById('result').innerHTML = wrd;
+				
+					if(z.length==k)
+					{
+
+						alert('U have done it');
+						tr();				
+					}
+				}
+				else
+				{
+					alert('No more chances left');
+				}
+				return false;
+			}
+		</script>
+	</head>
+	<body onload="hidbutton()" style="font-family :Comic Sans MS, cursive, sans-serif;background:#00ffff;font-size:24px;font-weight:bold">
+			<button onclick="return tr();" value="Try" id="quesbutton">Try</button>
+			<center>
+				<form name="myform" style="color:#000000;width:45%;border-radius:10px;margin-top:120px;" onsubmit="return matching();">
+					<br>
+					<span id="ques"></span>
+					<br>
+					<br>
+					<span id="result" name="result"></span>
+					<br>
+					<span id="index"></span>
+					<br>
+					<span id="gchar"></span>
+					<span id="chance"></span>
+					<br>	
+					<input type="text" name="guess" id="guesstext" style="text-transform:uppercase;font-family :Comic Sans MS, cursive, sans-serif;background:#00ffff;font-size:15px;font-weight:bold;text-align:center"></input>
+					<br>
+					<input type="button" onclick="return matching();" id="guessbutton" value="Guess" />
+					<br>
+				</form>
+			</center>
+	</body>
+</html>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Database date types and their sizes"
 ---
 
